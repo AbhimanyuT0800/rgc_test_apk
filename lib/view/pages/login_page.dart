@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rgc_test_apk/controller/auth_controller.dart';
+import 'package:rgc_test_apk/controller/fetch_products_controller.dart';
 import 'package:rgc_test_apk/core/constants/app_strings.dart';
 import 'package:rgc_test_apk/core/theme/color_pallets.dart';
 import 'package:rgc_test_apk/view/widgets/text_field_widget.dart';
@@ -83,6 +84,8 @@ class LoginPage extends ConsumerWidget {
                     mail: mailController.text,
                     pass: passController.text,
                     context: context));
+
+                ref.invalidate(fetchProductControllerProvider);
               },
             )
           ],

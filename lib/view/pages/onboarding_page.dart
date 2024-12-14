@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rgc_test_apk/core/constants/app_strings.dart';
 import 'package:rgc_test_apk/core/theme/color_pallets.dart';
+import 'package:rgc_test_apk/view/pages/home_page.dart';
 import 'package:rgc_test_apk/view/pages/login_page.dart';
 
 class OnboardingPage extends StatefulWidget {

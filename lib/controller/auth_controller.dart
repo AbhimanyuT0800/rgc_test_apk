@@ -21,7 +21,9 @@ Future<AuthModel?> verifyUserIsValid(ref,
     Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => const HomePage(),
+          builder: (context) => HomePage(
+            authModel: userModel,
+          ),
         ));
   }
   return null;
