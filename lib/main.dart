@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rgc_test_apk/controller/object_box_imp/object_box_imp.dart';
 import 'package:rgc_test_apk/view/pages/onboarding_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // await untill create object box
+  // await ObjectBoxImpl.create();
+
   runApp(const ProviderScope(child: MainApp()));
 }
 

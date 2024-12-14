@@ -3,9 +3,12 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rgc_test_apk/controller/fetch_products_controller.dart';
+import 'package:rgc_test_apk/controller/object_box_imp/fev_product_db.dart';
+import 'package:rgc_test_apk/controller/object_box_imp/is_fav.dart';
 import 'package:rgc_test_apk/core/constants/app_urls.dart';
 import 'package:rgc_test_apk/core/theme/color_pallets.dart';
 import 'package:rgc_test_apk/model/auth_model/auth_model.dart';
+import 'package:rgc_test_apk/model/product_entity/product_entity.dart';
 import 'package:rgc_test_apk/model/product_model/product_model.dart';
 
 class HomePage extends ConsumerWidget {
@@ -166,7 +169,8 @@ class ProductCardWidget extends HookConsumerWidget {
                       color: const Color.fromARGB(255, 231, 206, 151),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.all(3),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 3, vertical: .5),
                       child: Row(
                         children: [
                           const Icon(
@@ -185,10 +189,25 @@ class ProductCardWidget extends HookConsumerWidget {
                     ),
                   ),
                   const SizedBox(width: 7),
-                  const CircleAvatar(
-                    radius: 16,
-                    backgroundColor: ColorPallets.bgColor,
-                    child: Icon(Icons.favorite_border_outlined),
+                  const InkWell(
+                    // onTap: () {
+                    //   final isFav = ref.read(isFavProvider(id: product.id));
+                    //   if (isFav) {
+                    //     ref
+                    //         .watch(favProductDbProvider.notifier)
+                    //         .removeProduct(product.id);
+                    //   } else {
+                    //     ref
+                    //         .watch(favProductDbProvider.notifier)
+                    //         .addProduct(ProductEntity(itermId: product.id));
+                    //   }
+                    // },
+                    child: CircleAvatar(
+                        radius: 16,
+                        backgroundColor: ColorPallets.bgColor,
+                        child: Icon(
+                          Icons.favorite_border_outlined,
+                        )),
                   ),
                 ],
               ),
