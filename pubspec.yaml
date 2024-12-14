@@ -7,8 +7,10 @@ environment:
   sdk: ^3.6.0-149.3.beta
 
 dependencies:
+  dio: ^5.7.0
   flutter:
     sdk: flutter
+  flutter_hooks: ^0.20.5
   flutter_riverpod: ^2.6.1
   riverpod_annotation: ^2.6.1
 
@@ -24,3 +26,9 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  fonts:
+      - family: PlusJakartaSans
+        fonts:
+          - asset: assets/fonts/PlusJakartaSans-VariableFont_wght.ttf
+            weight: 500

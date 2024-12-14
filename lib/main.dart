@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rgc_test_apk/view/pages/onboarding_page.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const ProviderScope(child: MainApp()));
 }
 
 class MainApp extends StatelessWidget {
@@ -12,12 +14,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      scaffoldMessengerKey: scaffoldMessngerKey,
-      home: const Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
-    );
+        scaffoldMessengerKey: scaffoldMessngerKey,
+        theme: ThemeData(fontFamily: 'PlusJakartaSans'),
+        home: const OnboardingPage());
   }
 }
